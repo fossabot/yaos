@@ -45,6 +45,8 @@ ifdef CONFIG_FLOAT
 CFLAGS += -u _printf_float
 endif
 CFLAGS += -march=$(ARCH)
+CFLAGS += -fprofile-arcs -ftest-coverage
+LDFLAGS += -fprofile-arcs
 
 LD_SCRIPT = $(BUILDIR)/generated.ld
 
