@@ -24,7 +24,7 @@ install:
 
 script:
         - docker run -v $(pwd):/app onkwon/yaos-build make stm32f1-min
-        - if [ "${COVERITY_SCAN_BRANCH}" != 1 ]; then make ; fi
+        - if [ "${COVERITY_SCAN_BRANCH}" != 1 ]; then docker run -v $(pwd):/app onkwon/yaos-build make ; fi
 
 addons:
         coverity_scan:
