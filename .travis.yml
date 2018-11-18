@@ -30,8 +30,8 @@ addons:
         coverity_scan:
                 project:
                         name: "onkwon/yaos"
-                        description: An embedded operating system for ARM Cortex-M based microcontrollers
+                        description: "An embedded operating system for ARM Cortex-M based microcontrollers"
                         notification_email: kwon@toanyone.net
-                        build_command_prepend: make stm32f1-min
-                        build_command: make
+                        build_command_prepend: "docker run -v $(pwd):/app onkwon/yaos-build make stm32f1-min"
+                        build_command: "docker run -v $(pwd):/app onkwon/yaos-build make"
                         branch_pattern: coverity_scan
